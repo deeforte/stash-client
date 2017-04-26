@@ -1,2 +1,35 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  font-family: fantasy;
+}
+
+.container-fluid {
+//  background: url('http://i.imgur.com/1CNSrnl.jpg');
+//  background: url('http://i.imgur.com/d9Xmsxb.jpg');
+  background: url('http://i.imgur.com/0xjS884.jpg');
+  background-size: cover;
+}
+
+header {
+  color: blue;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+}
+
+ul {
+  color: #000;
+  font-size: 20px;
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+  opacity: 1;
+}
