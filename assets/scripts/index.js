@@ -2,7 +2,8 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-console.log('up and running')
+const authEvents = require('./userevents.js')
+console.log('up and running main js')
 const yarn = [
 {
 	name: 'mountain mohair',
@@ -36,7 +37,7 @@ const yarn = [
   quantity: 3,
   length: 200,
 	fiber: 'wool',
-  color: 'off white',
+  color: 'off-white',
   weight: 'worsted',
   project: 'scarf'
 },
@@ -54,6 +55,9 @@ listYarns(yarn)
 
 $(() => {
   setAPIOrigin(location, config)
+//  $('.gameBoard').children('').children('').children('').on('click', fillSqInPlay)
+  authEvents.addHandlers()
+//  $('.new-game').on('click', playAgain)
 })
 
 // use require with a reference to bundle the file and use it in this file
