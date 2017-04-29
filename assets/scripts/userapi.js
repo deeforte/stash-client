@@ -21,7 +21,7 @@ const signIn = (data) => {
 
 module.exports = {
   signUp,
-  signIn,
+  signIn
 //  signOut,
 //  chgPswd
 }

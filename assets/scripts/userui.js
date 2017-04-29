@@ -2,7 +2,7 @@
 require('./index')
 
 const store = require('./store')
-//const gameEvents = require('./games.js')
+// const gameEvents = require('./games.js')
 
 const signUpSuccess = (data) => {
   console.log('user signed up -', data)
@@ -37,7 +37,7 @@ module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure,
+  signInFailure
 //  signOutSuccess,
 //  signOutFailure,
 //  chgPswdSuccess,
