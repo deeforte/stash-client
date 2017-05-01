@@ -45,32 +45,40 @@ const yarn = [
 const listYarns = function (array) {
   console.log('yarnDisplay', yarnDisplay)
   for (let i = 0; i < array.length; i++) {
-    console.log('inlistYarns')
+    console.log('inlistYarns', i)
+    console.log('yarn id', array[i].id)
     const ul = document.getElementById('yarnList')
     const li = document.createElement('li')
     li.appendChild(document.createTextNode(' - ' + array[i].name + ' ' + array[i].quantity + '- ' + array[i].yards + ' yd skeins ' + ' in ' + array[i].color + ' planned for ' + array[i].project))
     const upbutton = document.createElement('button')
     upbutton.innerHTML = 'update'
+    upbutton.addEventListener('click', upYarn, false)
     li.appendChild(upbutton)
-    li.setAttribute('id', 'update')
     const delbutton = document.createElement('button')
     delbutton.innerHTML = 'delete'
+    delbutton.addEventListener('click', delYarn, false)
     li.appendChild(delbutton)
-    li.setAttribute('id', 'delete')
+    li.setAttribute('id', array[i].id)
+    console.log('li ID', li.id)
     ul.appendChild(li)
   }
 }
 
-// listYarns(yarn)
-// listYarns(yarnDisplay)
 const showYarn = function () {
-//  yarnEvents.getUserYarns()
   console.log('current yarns', currentYarns)
   yarnDisplay = currentYarns.yarns.yarns
   console.log('yarnDisplay', yarnDisplay)
 // console.log([yarnDisplay]['yarns'])
   console.log('currentYarns', currentYarns)
   listYarns(yarnDisplay)
+}
+
+const delYarn = function () {
+  console.log('delete yarn')
+}
+
+const upYarn = function () {
+  console.log('update yarn')
 }
 
 const addYarn = function () {
@@ -107,6 +115,7 @@ $(() => {
   $('.show-yarn').on('click', showYarn)
 //  $('.add-yarn').on('click', addYarn)
   $('#add-yarnform').on('click', addYarn)
+  $('delbutton').on('click', delYarn)
 })
 
 // use require with a reference to bundle the file and use it in this file

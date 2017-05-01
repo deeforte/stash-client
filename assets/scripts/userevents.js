@@ -21,12 +21,27 @@ const onSignIn = function (event) {
     .then(userUi.signInSuccess, console.log(data, data.credentials.email))
     .catch(userUi.signInFailure)
 }
+const onSignOut = function (event) {
+  event.preventDefault()
+//  console.log('sign out ran')
+  userApi.signOut()
+    .then(userUi.signOutSuccess)
+    .catch(userUi.signOutFailure)
+}
 
+const onChgPswd = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+//  console.log('changed password')
+  userApi.chgPswd(data)
+    .then(userUi.chgPswdSuccess)
+    .catch(userUi.chgPswdFailure)
+}
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-//  $('#sign-out').on('submit', onSignOut)
-//  $('#change-password').on('submit', onChgPswd)
+  $('#sign-out').on('submit', onSignOut)
+  $('#change-password').on('submit', onChgPswd)
 }
 
 module.exports = {
