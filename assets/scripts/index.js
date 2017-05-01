@@ -6,6 +6,7 @@ const authEvents = require('./userevents.js')
 const yarnEvents = require('./yarnevents.js')
 // const usersOnLine = require('./store')
 const currentYarns = require('./store')
+const getYarnFields = require('../../lib/get-form-fields')
 
 console.log('up and running main js')
 // const updatedYarn = {}
@@ -40,21 +41,6 @@ const yarn = [
     project: 'scarf'
   }
 ]
-const newYarn = {
-  'yarn': {
-    'name': 'shetland',
-    'quantity': 3,
-    'yards': 250,
-    'color': 'gray',
-    'project': 'shawl'
-  }
-}
-
-yarnEvents.getUserYarns()
-yarnDisplay = currentYarns
-console.log('yarnDisplay', yarnDisplay)
-//console.log([yarnDisplay]['yarns'])
-console.log('currentYarns', currentYarns)
 
 const listYarns = function (array) {
   console.log('yarnDisplay', yarnDisplay)
@@ -63,27 +49,64 @@ const listYarns = function (array) {
     const ul = document.getElementById('yarnList')
     const li = document.createElement('li')
     li.appendChild(document.createTextNode(' - ' + array[i].name + ' ' + array[i].quantity + '- ' + array[i].yards + ' yd skeins ' + ' in ' + array[i].color + ' planned for ' + array[i].project))
-    const button = document.createElement('button')
-    button.innerHTML = 'update'
-    li.appendChild(button)
-    li.setAttribute('id', 'element4')
+    const upbutton = document.createElement('button')
+    upbutton.innerHTML = 'update'
+    li.appendChild(upbutton)
+    li.setAttribute('id', 'update')
+    const delbutton = document.createElement('button')
+    delbutton.innerHTML = 'delete'
+    li.appendChild(delbutton)
+    li.setAttribute('id', 'delete')
     ul.appendChild(li)
   }
 }
 
-listYarns(yarn)
-//listYarns(yarnDisplay)
+// listYarns(yarn)
+// listYarns(yarnDisplay)
+const showYarn = function () {
+//  yarnEvents.getUserYarns()
+  console.log('current yarns', currentYarns)
+  yarnDisplay = currentYarns.yarns.yarns
+  console.log('yarnDisplay', yarnDisplay)
+// console.log([yarnDisplay]['yarns'])
+  console.log('currentYarns', currentYarns)
+  listYarns(yarnDisplay)
+}
 
-const addYarn = function (newYarn) {
+const addYarn = function () {
+  console.log('getYarnFields', getYarnFields)
+  const newYarn = {
+    'yarn': {
+      'name': 'shetland',
+      'quantity': 3,
+      'yards': 250,
+      'color': 'gray',
+      'project': 'shawl'
+    }
+  }
   console.log('newYarn', newYarn)
   yarnEvents.yarnCreate(newYarn)
+  const newul = document.getElementById('yarnList')
+  const newli = document.createElement('li')
+  newli.appendChild(document.createTextNode(' - ' + newYarn.yarn.name + ' ' + newYarn.yarn.quantity + '- ' + newYarn.yarn.yards + ' yd skeins ' + ' in ' + newYarn.yarn.color + ' planned for ' + newYarn.yarn.project))
+  const upbutton = document.createElement('button')
+  upbutton.innerHTML = 'update'
+  newli.appendChild(upbutton)
+  newli.setAttribute('id', 'update')
+  const delbutton = document.createElement('button')
+  delbutton.innerHTML = 'delete'
+  newli.appendChild(delbutton)
+  newli.setAttribute('id', 'delete')
+  newul.appendChild(newli)
 }
 
 $(() => {
   setAPIOrigin(location, config)
 //  $('.gameBoard').children('').children('').children('').on('click', fillSqInPlay)
   authEvents.addHandlers()
-  $('.add-yarn').on('click', addYarn)
+  $('.show-yarn').on('click', showYarn)
+//  $('.add-yarn').on('click', addYarn)
+  $('#add-yarnform').on('click', addYarn)
 })
 
 // use require with a reference to bundle the file and use it in this file

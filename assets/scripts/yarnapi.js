@@ -8,10 +8,10 @@ const read = function () {
     url: 'http://localhost:4741/yarns',
     //    url: config.apiOrigin + '/yarns',
     method: 'GET',
-    data: {}
-//    headers: {
-//      Authorization: 'Token token=' + store.user.token
-//    }
+    data: {},
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 const create = function (newYarn) {

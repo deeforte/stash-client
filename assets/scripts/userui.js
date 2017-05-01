@@ -2,6 +2,7 @@
 require('./index')
 
 const store = require('./store')
+const yarnEvents = require('./yarnevents')
 // const gameEvents = require('./games.js')
 
 const signUpSuccess = (data) => {
@@ -15,6 +16,7 @@ const signUpFailure = () => {
 const signInSuccess = (data) => {
   console.log('signin success ran data is ', data)
   store.user = data.user
+  yarnEvents.getUserYarns()
 //  $('h2').text('')
 //  $('h4').text('Scoreboard: no games played since signin')
 //  $('h5').text(store.user.email)

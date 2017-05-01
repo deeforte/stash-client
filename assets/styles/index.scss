@@ -12,7 +12,11 @@ body {
   background-size: cover;
   height: 600px;
 }
-
+button {
+  margin: 0px 10px 0px 10px;
+  font-size: 10px;
+  float: right;
+}
 header {
   color: blue;
   font-size: 40px;
