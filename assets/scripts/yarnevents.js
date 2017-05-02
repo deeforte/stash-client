@@ -25,8 +25,15 @@ const yarnUpdate = function (updatedYarn, updatedID) {
   .catch(yarnUi.updateYarnFailure)
 }
 
+const yarnDelete = function (yarnDelId) {
+  yarnApi.destroy(yarnDelId)
+  .then(yarnUi.deleteYarnSuccess)
+  .catch(yarnUi.deleteYarnFailure)
+}
+
 module.exports = {
   yarnCreate,
   yarnUpdate,
+  yarnDelete,
   getUserYarns
 }

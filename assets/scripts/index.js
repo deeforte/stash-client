@@ -41,9 +41,20 @@ const yarn = [
     project: 'scarf'
   }
 ]
+let upYarnFields = {
+  'yarn': {
+    'name': '',
+    'quantity': 0,
+    'yards': 0,
+    'color': '',
+    'project': ''
+  }
+}
 
 const listYarns = function (array) {
   console.log('yarnDisplay', yarnDisplay)
+//  document.getElementById('yarnList').firstChild.innerHTML = 'name quantity length color project'
+  $('li#headings').html('name quantity length color project')
   for (let i = 0; i < array.length; i++) {
     console.log('inlistYarns', i)
     console.log('yarn id', array[i].id)
@@ -52,16 +63,24 @@ const listYarns = function (array) {
     li.appendChild(document.createTextNode(' - ' + array[i].name + ' ' + array[i].quantity + '- ' + array[i].yards + ' yd skeins ' + ' in ' + array[i].color + ' planned for ' + array[i].project))
     const upbutton = document.createElement('button')
     upbutton.innerHTML = 'update'
-    upbutton.addEventListener('click', upYarn, false)
+    upbutton.addEventListener('click', upYarn)
     li.appendChild(upbutton)
     const delbutton = document.createElement('button')
     delbutton.innerHTML = 'delete'
-    delbutton.addEventListener('click', delYarn, false)
+    delbutton.addEventListener('click', delYarn)
     li.appendChild(delbutton)
     li.setAttribute('id', array[i].id)
     console.log('li ID', li.id)
+//    li.addEventListener('click', viewYarn)
     ul.appendChild(li)
   }
+}
+// added for debugging, delete later
+const viewYarn = function () {
+  console.log(this.id)
+  console.log($(this).attr('id'))
+  console.log($(this).html())
+  console.log($(this).text())
 }
 
 const showYarn = function () {
@@ -73,12 +92,20 @@ const showYarn = function () {
   listYarns(yarnDisplay)
 }
 
-const delYarn = function () {
-  console.log('delete yarn')
+const delYarn = function (yarnDelId) {
+  console.log($(this).closest('li').attr('id'))
+//  yarnDelId = parseInt($(this).attr('id'))
+  yarnDelId = ($(this).closest('li').attr('id'))
+  console.log('yarnDelId', yarnDelId)
+  yarnEvents.yarnDelete(yarnDelId)
 }
 
-const upYarn = function () {
-  console.log('update yarn')
+const upYarn = function (yarnUpId) {
+  console.log('update yarn', $(this).closest('li').attr('id'))
+  yarnUpId = ($(this).closest('li').attr('id'))
+  console.log('yarnUpId', yarnUpId)
+  upYarnFields = yarnDisplay[yarnUpId]
+  console.log('upYarnFields', upYarnFields)
 }
 
 const addYarn = function () {
@@ -94,18 +121,6 @@ const addYarn = function () {
   }
   console.log('newYarn', newYarn)
   yarnEvents.yarnCreate(newYarn)
-  const newul = document.getElementById('yarnList')
-  const newli = document.createElement('li')
-  newli.appendChild(document.createTextNode(' - ' + newYarn.yarn.name + ' ' + newYarn.yarn.quantity + '- ' + newYarn.yarn.yards + ' yd skeins ' + ' in ' + newYarn.yarn.color + ' planned for ' + newYarn.yarn.project))
-  const upbutton = document.createElement('button')
-  upbutton.innerHTML = 'update'
-  newli.appendChild(upbutton)
-  newli.setAttribute('id', 'update')
-  const delbutton = document.createElement('button')
-  delbutton.innerHTML = 'delete'
-  newli.appendChild(delbutton)
-  newli.setAttribute('id', 'delete')
-  newul.appendChild(newli)
 }
 
 $(() => {
@@ -115,7 +130,6 @@ $(() => {
   $('.show-yarn').on('click', showYarn)
 //  $('.add-yarn').on('click', addYarn)
   $('#add-yarnform').on('click', addYarn)
-  $('delbutton').on('click', delYarn)
 })
 
 // use require with a reference to bundle the file and use it in this file

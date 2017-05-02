@@ -39,8 +39,23 @@ const update = function (updatedYarn, updatedID) {
     }
   })
 }
+const destroy = function (yarnDelId) {
+//  console.log(updatedID)
+//  console.log(store)
+//  console.log(updatedYarn)
+  return $.ajax({
+    url: 'http://localhost:4741/yarns/' + yarnDelId,
+//    url: config.apiOrigin + '/yarns/' + yarnDelId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   read,
   create,
-  update
+  update,
+  destroy
 }

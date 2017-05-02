@@ -52,6 +52,15 @@ const updateYarnFailure = (yarn) => {
   console.log('update bombed')
 }
 
+const deleteYarnSuccess = (yarn) => {
+//  console.log('delete yarn success ran data is ', yarn)
+//  console.log(store.yarn)
+}
+
+const deleteYarnFailure = (yarn) => {
+  console.log('update bombed')
+}
+
 module.exports = {
   newYarnSuccess,
   newYarnFailure,
