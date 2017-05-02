@@ -26,12 +26,12 @@ const create = function (newYarn) {
   })
 }
 
-const update = function (updatedYarn, updatedID) {
+const update = function (updatedYarn) {
 //  console.log(updatedID)
 //  console.log(store)
-//  console.log(updatedYarn)
+  console.log(updatedYarn)
   return $.ajax({
-    url: config.apiOrigin + '/yarns/' + updatedID,
+    url: config.apiOrigin + '/yarns/' + updatedYarn.yarn.id,
     method: 'PATCH',
     data: updatedYarn,
     headers: {

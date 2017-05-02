@@ -34,6 +34,7 @@ const readYarnFailure = (yarn) => {
 const newYarnSuccess = (yarn) => {
 //  console.log('new yarn success ran data is ', yarn)
   store.yarn = yarn
+  $('#addModal').modal('toggle')
 //  console.log(yarn.yarn.id)
 //  $('h5').text(store.user.email + ' is playing yarn ' + yarn.yarn.id)
 //  console.log(store.yarn)
@@ -44,6 +45,7 @@ const newYarnFailure = (yarn) => {
 }
 
 const updateYarnSuccess = (yarn) => {
+  $('#upModal').modal('toggle')
 //  console.log('update yarn success ran data is ', yarn)
 //  console.log(store.yarn)
 }

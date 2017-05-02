@@ -32,24 +32,103 @@
           </form>
     </div>
     <div class="container" style='visibility: hidden'>
-      <button class="show-yarn">show yarn</button>
+      <h3>Welcome.</h3>
       <ul id="yarnList">
-        <li id="headings">name quantity length color project</li>
       </ul>
 
-      <div class="add-yarndiv">
-        <form id="add-yarnform">
-          <fieldset>
-            <input type="text" name="yarn name" id="yarn-name" placeholder="name">
-            <input type="number" name="quantity" id="yarn-quantity" placeholder="quantity">
-            <input type="number" name="length" id="yarn-length" placeholder="length">
-            <input type="text" name="color" id="yarn-color" placeholder="color">
-            <input type="text" name="project" id="yarn-project" placeholder="project">
-            <input type="submit" name="submit" value="add yarn">
-          </fieldset>
+<button class="btn btn-info btn-md show-yarn">show yarn</button>
+
+<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#addModal">add yarn</button>
+<!-- Modal -->
+<div id="addModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">add yarn</h4>
+      </div>
+      <div class="modal-body">
+        <p>Enter your new yarn info here.</p>
+        <form class="form-addYarn">
+        <div class="form-group">
+          <label class="sr-only" for="email">yarn name</label>
+          <input type="text" name="yarn[name]" class="yarn-name" placeholder="name">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="pwd">yarn quantity</label>
+          <input type="number" name="yarn[quantity]" class="yarn-quantity" placeholder="quantity">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="email">yarn length</label>
+          <input type="number" name="yarn[length]" class="yarn-length" placeholder="length">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="pwd">yarn color</label>
+          <input type="text" name="yarn[color]" class="yarn-color" placeholder="color">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="pwd">project</label>
+          <input type="text" name="yarn[project]" class="yarn-project" placeholder="project">
+        </div>
+        <button type="submit" class="btn btn-default add-yarn">add yarn</button>
         </form>
       </div>
+      <div class="modal-footer">
+    <!--- modal content ends-->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
     </div>
+  </div>
+</div>
+<!-- Modal -->
+<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#upModal">update yarn</button>
+<div id="upModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">update yarn</h4>
+      </div>
+      <div class="modal-body">
+        <p>Update your yarn info here.</p>
+        <form class="form-updateYarn">
+        <div class="form-group">
+          <div class="form-group">
+            <label class="sr-only" for="pwd">yarn quantity</label>
+            <input type="number" name="yarn[id]" class="yarn-id" placeholder="id">
+          </div>
+          <label class="sr-only" for="email">yarn name</label>
+          <input type="text" name="yarn[name]" class="yarn-name" placeholder="name">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="pwd">yarn quantity</label>
+          <input type="number" name="yarn[quantity]" class="yarn-quantity" placeholder="quantity">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="email">yarn length</label>
+          <input type="number" name="yarn[length]" class="yarn-length" placeholder="length">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="pwd">yarn color</label>
+          <input type="text" name="yarn[color]" class="yarn-color" placeholder="color">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="pwd">project</label>
+          <input type="text" name="yarn[project]" class="yarn-project" placeholder="project">
+        </div>
+        <button type="submit" class="btn btn-default add-yarn">update yarn</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+    <!--- modal content ends-->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 <div class="signoutForms" style='visibility: hidden'>
   <form id="sign-out">
@@ -67,5 +146,6 @@
     </fieldset>
   </form>
 </div>
+
     </body>
 </html>

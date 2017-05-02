@@ -19,8 +19,8 @@ const yarnCreate = function (newYarn) {
   .catch(yarnUi.newYarnFailure)
 }
 
-const yarnUpdate = function (updatedYarn, updatedID) {
-  yarnApi.update(updatedYarn, updatedID)
+const yarnUpdate = function (updatedYarn) {
+  yarnApi.update(updatedYarn)
   .then(yarnUi.updateYarnSuccess)
   .catch(yarnUi.updateYarnFailure)
 }
