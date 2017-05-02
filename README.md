@@ -19,6 +19,10 @@ Curl scripts were created for testing POST, GET, PATCH and DELETE api actions.
 
 Technologies used are html, css, javascript, bootstrap and AJAX.
 
+## Link to wireframes
+
+Link to wireframe and user stories http://i.imgur.com/P2hZ5nU.jpg
+
 ## User Stories
 
 1.  As a user, I want to enter yarn inventory so that I have an online reference for yarn inventory.
