@@ -36,21 +36,14 @@ const listYarns = function (array) {
 
 const showYarn = function () {
   $('.up-btn').css('visibility', 'visible')
-//  console.log('current yarns', currentYarns)
-  yarnDisplay = currentYarns.yarns.yarns
-//  console.log('yarnDisplay', yarnDisplay)
-// console.log([yarnDisplay]['yarns'])
-//  console.log('currentYarns', currentYarns)
-//  yarnEvents.getUserYarns()
-//  console.log('in show yarnDisplay', yarnDisplay)
+  yarnEvents.getUserYarns()
   yarnDisplay = currentYarns.yarns.yarns
   listYarns(yarnDisplay)
 }
 const refreshYarn = function () {
   yarnEvents.getUserYarns()
-//  console.log('in show yarnDisplay', yarnDisplay)
   yarnDisplay = currentYarns.yarns.yarns
-//  listYarns(yarnDisplay)
+//  console.log('in refreshYarn', yarnDisplay)
 }
 
 const delYarn = function (yarnDelId) {
@@ -60,8 +53,8 @@ const delYarn = function (yarnDelId) {
 //  console.log('yarnDelId', yarnDelId)
   yarnEvents.yarnDelete(yarnDelId)
   refreshYarn()
+//  console.log('in delYarn', yarnDisplay)
 //  listYarns(yarnDisplay)
-  showYarn()
 }
 
 const upYarn = function (event) {
@@ -70,23 +63,17 @@ const upYarn = function (event) {
 //  console.log('upYarnFields', data)
   yarnEvents.yarnUpdate(data)
   refreshYarn()
-  refreshYarn()
-  refreshYarn()
-  //  listYarns(yarnDisplay)
-  showYarn()
+//  console.log('in upYarn', yarnDisplay)
 }
 
 const addYarn = function (event) {
   event.preventDefault()
 //  console.log('getYarnFields', getYarnFields)
   const data = getYarnFields(this)
-//  console.log('newYarn', data)
+//  console.log('newYarn', data, getYarnFields)
   yarnEvents.yarnCreate(data)
   refreshYarn()
-  refreshYarn()
-  refreshYarn()
-  //  listYarns(yarnDisplay)
-  showYarn()
+//  console.log('in addYarn', yarnDisplay)
 }
 
 $(() => {

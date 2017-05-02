@@ -6,6 +6,7 @@ const yarnEvents = require('./yarnevents')
 
 const signUpSuccess = (data) => {
   $('#sign-up').css('visibility', 'hidden')
+  $('#sign-up').trigger('reset')
 }
 const signUpFailure = () => {
 }
@@ -17,6 +18,7 @@ const signInSuccess = (data) => {
   $('.signinForms').css('visibility', 'hidden')
   $('.signoutForms').css('visibility', 'visible')
   $('.container').css('visibility', 'visible')
+  $('#sign-in').trigger('reset')
 }
 
 const signInFailure = () => {
@@ -38,6 +40,7 @@ const signOutFailure = (error) => {
 }
 
 const chgPswdSuccess = (data) => {
+  $('#change-password').trigger('reset')
 //  console.log(data)
 }
 
