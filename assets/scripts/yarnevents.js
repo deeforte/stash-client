@@ -5,7 +5,7 @@ const config = require('./config')
 const yarnApi = require('./yarnapi.js')
 const yarnUi = require('./yarnui.js')
 const getFormFields = require('../../lib/get-form-fields')
-console.log('up and runnning yarn events')
+// console.log('up and runnning yarn events')
 
 const getUserYarns = function () {
   yarnApi.read()

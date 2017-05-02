@@ -5,7 +5,7 @@ const config = require('./config')
 const userApi = require('./userapi.js')
 const userUi = require('./userui.js')
 const getFormFields = require('../../lib/get-form-fields')
-console.log('up and runnning user events')
+// console.log('up and runnning user events')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -18,7 +18,7 @@ const onSignIn = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   userApi.signIn(data)
-    .then(userUi.signInSuccess, console.log(data, data.credentials.email))
+    .then(userUi.signInSuccess)
     .catch(userUi.signInFailure)
 }
 const onSignOut = function (event) {

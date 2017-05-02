@@ -31,7 +31,7 @@
           </fieldset>
           </form>
     </div>
-    <div class="container" style='visibility: hidden'>
+<div class="container" style='visibility: hidden'>
       <h3>Welcome.</h3>
       <ul id="yarnList">
       </ul>
@@ -61,7 +61,7 @@
         </div>
         <div class="form-group">
           <label class="sr-only" for="email">yarn length</label>
-          <input type="number" name="yarn[length]" class="yarn-length" placeholder="length">
+          <input type="number" name="yarn[yards]" class="yarn-length" placeholder="yards">
         </div>
         <div class="form-group">
           <label class="sr-only" for="pwd">yarn color</label>
@@ -81,8 +81,9 @@
     </div>
   </div>
 </div>
+
 <!-- Modal -->
-<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#upModal">update yarn</button>
+<button type="button" class="btn btn-info btn-md up-btn" data-toggle="modal" style='visibility: hidden' data-target="#upModal">update yarn</button>
 <div id="upModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -108,7 +109,7 @@
         </div>
         <div class="form-group">
           <label class="sr-only" for="email">yarn length</label>
-          <input type="number" name="yarn[length]" class="yarn-length" placeholder="length">
+          <input type="number" name="yarn[yards]" class="yarn-length" placeholder="yards">
         </div>
         <div class="form-group">
           <label class="sr-only" for="pwd">yarn color</label>
@@ -129,6 +130,7 @@
   </div>
 </div>
 </div>
+
 
 <div class="signoutForms" style='visibility: hidden'>
   <form id="sign-out">
