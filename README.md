@@ -1,8 +1,11 @@
 ## link to Stash API repo
 
 Stash API repo https://github.com/deeforte/stash-api
+
 Stash API readme https://github.com/deeforte/stash-api/blob/master/README.md
+
 Stash API heroku https://stash-api-heroku.herokuapp.com/
+
 
 ## Description of and approach to building application.
 
