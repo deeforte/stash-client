@@ -16,7 +16,7 @@ const listYarns = function (array) {
 //  console.log('yarnDisplay', yarnDisplay)
 //  document.getElementById('yarnList').firstChild.innerHTML = 'name quantity length color project'
   $('ul#yarnList').html('')
-  $('li#headings').html('name quantity length color project')
+//  $('li#headings').html('name quantity length color project')
   for (let i = 0; i < array.length; i++) {
 //    console.log('inlistYarns', i)
 //    console.log('yarn id', array[i].id)
@@ -43,10 +43,12 @@ const showYarn = function () {
 const refreshYarn = function () {
   yarnEvents.getUserYarns()
   yarnDisplay = currentYarns.yarns.yarns
+//  listYarns(yarnDisplay)
 //  console.log('in refreshYarn', yarnDisplay)
 }
 
 const delYarn = function (yarnDelId) {
+//  event.preventDefault()
 //  console.log($(this).closest('li').attr('id'))
 //  yarnDelId = parseInt($(this).attr('id'))
   yarnDelId = ($(this).closest('li').attr('id'))
