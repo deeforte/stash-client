@@ -16,18 +16,21 @@ const getUserYarns = function () {
 const yarnCreate = function (newYarn) {
   yarnApi.create(newYarn)
   .then(yarnUi.newYarnSuccess)
+  .then(getUserYarns)
   .catch(yarnUi.newYarnFailure)
 }
 
 const yarnUpdate = function (updatedYarn) {
   yarnApi.update(updatedYarn)
   .then(yarnUi.updateYarnSuccess)
+  .then(getUserYarns)
   .catch(yarnUi.updateYarnFailure)
 }
 
 const yarnDelete = function (yarnDelId) {
   yarnApi.destroy(yarnDelId)
   .then(yarnUi.deleteYarnSuccess)
+  .then(getUserYarns)
   .catch(yarnUi.deleteYarnFailure)
 }
 

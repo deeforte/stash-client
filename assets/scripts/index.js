@@ -13,7 +13,7 @@ const getYarnFields = require('../../lib/get-form-fields')
 let yarnDisplay = []
 
 const listYarns = function (array) {
-//  console.log('yarnDisplay', yarnDisplay)
+//  console.log('in list yarns yarnDisplay', yarnDisplay)
 //  document.getElementById('yarnList').firstChild.innerHTML = 'name quantity length color project'
   $('ul#yarnList').html('')
 //  $('li#headings').html('name quantity length color project')
@@ -39,11 +39,13 @@ const showYarn = function () {
   yarnEvents.getUserYarns()
   yarnDisplay = currentYarns.yarns.yarns
   listYarns(yarnDisplay)
+//  console.log('in show Yarn', yarnDisplay)
 }
 const refreshYarn = function () {
-  yarnEvents.getUserYarns()
+//  yarnEvents.getUserYarns()
   yarnDisplay = currentYarns.yarns.yarns
-//  listYarns(yarnDisplay)
+  listYarns(yarnDisplay)
+//  $('.show-yarn').trigger('click')
 //  console.log('in refreshYarn', yarnDisplay)
 }
 
@@ -65,6 +67,7 @@ const upYarn = function (event) {
 //  console.log('upYarnFields', data)
   yarnEvents.yarnUpdate(data)
   refreshYarn()
+//  listYarns(yarnDisplay)
 //  console.log('in upYarn', yarnDisplay)
 }
 
@@ -75,6 +78,7 @@ const addYarn = function (event) {
 //  console.log('newYarn', data, getYarnFields)
   yarnEvents.yarnCreate(data)
   refreshYarn()
+//  listYarns(yarnDisplay)
 //  console.log('in addYarn', yarnDisplay)
 }
 

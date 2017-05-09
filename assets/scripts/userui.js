@@ -5,7 +5,7 @@ const store = require('./store')
 const yarnEvents = require('./yarnevents')
 
 const signUpSuccess = (data) => {
-//  $('#sign-up').css('visibility', 'hidden')
+  $('#sign-up').css('visibility', 'hidden')
   $('#sign-up').trigger('reset')
 }
 const signUpFailure = () => {
