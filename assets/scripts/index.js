@@ -56,7 +56,7 @@ const delYarn = function (yarnDelId) {
   yarnDelId = ($(this).closest('li').attr('id'))
 //  console.log('yarnDelId', yarnDelId)
   yarnEvents.yarnDelete(yarnDelId)
-  refreshYarn()
+//  refreshYarn()
 //  console.log('in delYarn', yarnDisplay)
 //  listYarns(yarnDisplay)
 }
@@ -66,7 +66,7 @@ const upYarn = function (event) {
   const data = getYarnFields(this)
 //  console.log('upYarnFields', data)
   yarnEvents.yarnUpdate(data)
-  refreshYarn()
+//  refreshYarn()
 //  listYarns(yarnDisplay)
 //  console.log('in upYarn', yarnDisplay)
 }
@@ -77,7 +77,7 @@ const addYarn = function (event) {
   const data = getYarnFields(this)
 //  console.log('newYarn', data, getYarnFields)
   yarnEvents.yarnCreate(data)
-  refreshYarn()
+//  refreshYarn()
 //  listYarns(yarnDisplay)
 //  console.log('in addYarn', yarnDisplay)
 }

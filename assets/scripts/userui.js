@@ -14,7 +14,7 @@ const signInSuccess = (data) => {
 //  console.log('signin success ran data is ', data)
   store.user = data.user
   yarnEvents.getUserYarns()
-  $('h3').text('Welcome ' + store.user.email)
+  $('h3').text('Welcome ' + store.user.email + ', click on display to see your current yarn stash.')
   $('.container').css('visibility', 'visible')
   $('.signinForms').css('visibility', 'hidden')
 //  $('#sign-up').css('visibility', 'hidden')
